@@ -1,6 +1,0 @@
--e ../backstack/
-python-slugify==1.2.5
-mandrill==1.0.57
-aiobotocore==0.9.4
-python-resize-image==1.1.18
-sqlalchemy-migrate==0.11.0
