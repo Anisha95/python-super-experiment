@@ -1,5 +1,5 @@
 from backstack.schema import BaseSchema
-from .model import Staff
+from .models import Staff
 from backstack import schema_fields as fields
 
 
@@ -17,6 +17,6 @@ class StaffSchema(BaseSchema):
     class Meta:
         model = Staff
         fields = (
-            "id", "first_name", "last_name", "dob", "gender", "qualifications",
+            "staff_id", "first_name", "last_name", "dob", "gender", "qualifications",
             "other_details"
         )
