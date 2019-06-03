@@ -7,7 +7,7 @@ patient_table = Table(
     "patient",
     metadata,
 
-    Column("patient_id", Integer, primary_key=True),
+    Column("id", Integer, primary_key=True),
     Column("first_name", String(32), unique=True, nullable=False),
     Column("last_name", String(32), unique=True, nullable=False),
     Column("dob", Date, nullable=False),
@@ -18,6 +18,7 @@ patient_table = Table(
 
 def upgrade(migrate_engine):
     metadata.bind = migrate_engine
+
     patient_table.create()
 
 

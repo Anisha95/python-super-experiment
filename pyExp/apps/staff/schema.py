@@ -1,22 +1,21 @@
-from backstack.schema import BaseSchema
+from backstack.schema import SystemSchema
 from .models import Staff
 from backstack import schema_fields as fields
 
 
-class StaffSchema(BaseSchema):
+class StaffSchema(SystemSchema):
     """
-    Used to combine the whole user Profile
+    Used to combine the whole staff
     """
-    first_name = fields.String()
-    last_name = fields.String()
-    dob = fields.Date()
-    gender = fields.String()
-    qualifications = fields.String()
-    other_details = fields.String()
+    first_name = fields.String(required=True)
+    last_name = fields.String(required=True)
+    dob = fields.Date(required=True)
+    gender = fields.String(required=True)
+    qualifications = fields.String(required=True)
+    other_details = fields.String(required=True)
 
     class Meta:
         model = Staff
         fields = (
-            "staff_id", "first_name", "last_name", "dob", "gender", "qualifications",
-            "other_details"
+            "id", "first_name", "last_name", "dob", "gender", "qualifications", "other_details"
         )

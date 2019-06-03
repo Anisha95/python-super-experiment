@@ -7,9 +7,9 @@ patients_medication_table = Table(
     "patients_medication",
     metadata,
 
-    Column("patients_medication_id", Integer, primary_key=True),
-    Column("medication_id", Integer, ForeignKey("medication_table.medication_id"), nullable=False),
-    Column("patient_id", Integer, ForeignKey("patient_table.patient_id"), nullable=False),
+    Column("id", Integer, primary_key=True),
+    Column("medication_id", Integer, ForeignKey("medication.id"), nullable=False),
+    Column("patient_id", Integer, ForeignKey("patient.id"), nullable=False),
     Column("date_time_administered", DateTime, nullable=False),
     Column("dosage", Integer, nullable=True),
     Column("comments", String(length=100), nullable=True),
@@ -19,6 +19,8 @@ patients_medication_table = Table(
 
 def upgrade(migrate_engine):
     metadata.bind = migrate_engine
+    _medication = Table("medication", metadata, autoload=True)
+    _patient = Table("patient", metadata, autoload=True)
     patients_medication_table.create()
 
 
