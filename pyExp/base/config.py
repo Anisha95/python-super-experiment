@@ -7,4 +7,6 @@ def override_settings(settings):
         "staff",
         "patient",
         "medicine",
+        "appointment",
+        "patient_medication"
     )

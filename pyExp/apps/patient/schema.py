@@ -11,7 +11,7 @@ class PatientSchema(SystemSchema):
     last_name = fields.String(required=True)
     dob = fields.Date(required=True)
     gender = fields.String(required=True)
-    other_details = fields.String(required=True)
+    other_details = fields.String(required=False)
 
     class Meta:
         model = Patient

@@ -12,7 +12,7 @@ class StaffSchema(SystemSchema):
     dob = fields.Date(required=True)
     gender = fields.String(required=True)
     qualifications = fields.String(required=True)
-    other_details = fields.String(required=True)
+    other_details = fields.String(required=False)
 
     class Meta:
         model = Staff
