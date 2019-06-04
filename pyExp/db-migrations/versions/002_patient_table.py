@@ -8,17 +8,16 @@ patient_table = Table(
     metadata,
 
     Column("id", Integer, primary_key=True),
-    Column("first_name", String(32), unique=True, nullable=False),
-    Column("last_name", String(32), unique=True, nullable=False),
+    Column("first_name", String(32), unique=True),
+    Column("last_name", String(32), unique=True),
     Column("dob", Date, nullable=False),
-    Column("gender", String(length=1), nullable=False),
-    Column("other_details", String(length=140), nullable=True),
+    Column("gender", String(length=1)),
+    Column("other_details", String(length=140)),
 )
 
 
 def upgrade(migrate_engine):
     metadata.bind = migrate_engine
-
     patient_table.create()
 
 
