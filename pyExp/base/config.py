@@ -6,4 +6,5 @@ def override_settings(settings):
     settings.APPS = (
         "staff",
         "patient",
+        "medicine",
     )
