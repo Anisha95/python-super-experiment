@@ -13,7 +13,7 @@ WEBSITE_DOMAIN=localhost:3000
 
 MEMCACHED_HOST=localhost
 
-S3_BUCKET=travlyng-test
+S3_BUCKET=pyex-test
 S3_ENDPOINT_URL=https://sgp1.digitaloceanspaces.com
 
 USER_MODEL='pyex'
